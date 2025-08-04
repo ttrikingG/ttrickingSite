@@ -1,0 +1,85 @@
+@font-face {
+  font-family: UrbanJungleDEMO;
+  src: url(../fonts/UrbanJungleDEMO.otf);
+}
+
+.LogoPart1 {
+  font-family: UrbanJungleDEMO;
+  font-size: 3em;
+  color: DarkViolet;
+  text-shadow: -1px -1px 0 white,
+               1px -1px 0 white,
+              -1px  1px 0 white,
+               1px  1px 0 white;
+}
+
+.LogoPart2 {
+  font-family: UrbanJungleDEMO;
+  font-size: 3em;
+  letter-spacing: 4px;
+  color: lime;
+  text-shadow: -1px -1px 0 black,
+               1px -1px 0 black,
+              -1px  1px 0 black,
+               1px  1px 0 rgb(61, 21, 21);
+}
+
+body{
+    max-width: 1080px;
+    margin: auto;
+    padding: 2px;
+    background-color: Gainsboro;
+    border-radius: 4px;
+}
+
+.buttonLime {
+  background-color: lime;
+  text-decoration: none;
+  color: black;
+  border: 1px solid #FFFFFF;
+  padding: 10px;
+  cursor: pointer;
+  appearance: auto;
+  -webkit-appearance: button;
+  border-radius: 4px; /* opcional, para suavizar */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonLime:hover {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+.buttonViolet {
+  background-color: darkviolet;
+  color: white;
+  border: 1px solid #FFFFFF;
+  padding: 10px;
+  cursor: pointer;
+  appearance: auto;
+  -webkit-appearance: button;
+  border-radius: 4px; /* opcional, para suavizar */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonViolet:hover {
+  background-color: white;
+  color: black;
+}
+
+
+footer {
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  text-decoration: none; /* opcional: remove sublinhado */
+}
+
+footer a:hover {
+  text-decoration: underline; /* opcional: destacar quando passar o mouse */
+}
+
+

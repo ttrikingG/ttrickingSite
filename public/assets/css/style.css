@@ -1,0 +1,200 @@
+@font-face {
+  font-family: UrbanJungleDEMO;
+  src: url(../fonts/UrbanJungleDEMO.otf);
+}
+
+.LogoPart1 {
+  font-family: UrbanJungleDEMO;
+  font-size: 3em;
+  color: DarkViolet;
+  text-shadow:-1px -1px 0 white,
+               1px -1px 0 white,
+              -1px  1px 0 white,
+               1px  1px 0 white;
+}
+
+.LogoPart2 {
+  font-family: UrbanJungleDEMO;
+  font-size: 3em;
+  letter-spacing: 4px;
+  color: lime;
+  text-shadow:-1px -1px 0 black,
+               1px -1px 0 black,
+              -1px  1px 0 black,
+               1px  1px 0 black;
+}
+
+body{
+    max-width: 1080px;
+    margin: auto;
+    padding: 2px;
+    background-color: Gainsboro;
+    border-radius: 4px;
+    font-family: sans-serif;
+}
+
+/* estrutura do container do main site */
+
+.containerMain {
+  display: flex;
+  gap: 10px; /* Espaço entre as colunas */
+  align-items: flex-start;
+  padding: 2px;
+}
+
+/* estrutura do container da esquerda */
+.contentMainLeft {
+  flex: 1; /* Ocupa 2 partes do espaço */
+  background-color: snow; 
+  
+}
+/* estrutura do container da esquerda */
+
+/* estrutura do container da Direita */
+.contentMainRight {
+  flex: 1; /* Ocupa 1 parte do espaço */
+  background-color: snow;
+  border-radius: 4px;
+}
+
+/* Estilo comum para todas as content boxes */
+.contentMainRight > div {
+  padding: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Galeria de imagens 40x40 */
+.content1 {
+  background-color: indigo;
+  display: flex;
+  gap: 4px;
+  justify-content: start;
+  align-items: center;
+}
+
+/* Tabela de posts mais lidos */
+.content2 table {
+  width: 100%;
+}
+
+/* Últimas notícias com imagens pequenas */
+.content3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/*.content3 img {
+  
+}*/
+
+/* Botões */
+.content4 {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* Para telas pequenas (responsivo) */
+@media (max-width: 768px) {
+  .containerMain {
+    flex-direction: column;
+  }
+
+  .contentMainLeft,
+  .contentMainRight {
+    width: 100%;
+  }
+}
+
+/* estrutura do container do main site */
+
+footer {
+  background-color: Indigo;
+  color: snow;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  text-decoration: none; /* opcional: remove sublinhado */
+}
+
+footer a:hover {
+  text-decoration: underline; /* opcional: destacar quando passar o mouse */
+}
+
+.alerta-nova-genesis {
+  background-color: Indigo;
+  color: snow;
+  text-align: center;
+
+}
+
+.alerta-nova-genesis h3 {
+  animation: sireneCores 1.5s linear infinite;
+}
+
+@keyframes sireneCores {
+  0%, 100% {
+    color: snow;      /* cor clara */
+  }
+  50% {
+    color: red;       /* cor sirene */
+  }
+}
+
+/* componentes */
+.buttonLime {
+  background-color: lime;
+  text-decoration: none;
+  color: black;
+  border: 1px solid #FFFFFF;
+  padding: 10px;
+  cursor: pointer;
+  appearance: auto;
+  -webkit-appearance: button;
+  border-radius: 4px; /* opcional, para suavizar */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonLime:hover {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: snow;
+    border: none;
+    border-radius: 8px;
+   
+  }
+
+  thead {
+    background-color: indigo; /* Indigo-600 */
+    color: snow;
+  }
+
+  th, td {
+    padding: 4px;
+    text-align: center; /* centraliza o texto */
+    border-bottom: 1px solid purple; /* Indigo-200 */
+  }
+
+  tbody tr:hover {
+    background-color: plum; /* Indigo-100 */
+  }
+
+  a {
+    color: purple;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
