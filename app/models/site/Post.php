@@ -4,6 +4,7 @@ namespace app\models\site;
 
 use Exception;
 use app\models\Model;
+use app\traits\Search;
 
 class Post extends Model
 {
@@ -24,4 +25,14 @@ class Post extends Model
             var_dump($e->getMessage());
         }
     }
+
+
+    public function findWithFilters(array $filter)
+    {
+        return Search::find($this->table, $filter);
+    }
+
+
 }
+
+

@@ -45,16 +45,35 @@
   <hr>
   
   <div style="background-color: indigo; border-radius: 4px;">
-    <form action="/Home" method="get">
-      <input type="text" name="q" placeholder="🔍 Pesquisar..." required>
-      <select name="type">
-        <option value="post">Postagens</option>
-        <option value="product">Produtos</option>
-        <option value="service">Serviços</option>
+    <form method="GET" action="/search">
+      <input type="text" name="q" placeholder="Search..." value="<?= ($_GET['q'] ?? '') ?>">
+
+      <!-- Filtro por categoria -->
+      <select name="categoria">
+        <option value="">All Categories</option>
+        <option value="1" <?= isset($_GET['categoria']) && $_GET['categoria'] == 1 ? 'selected' : '' ?>>Categoria 1</option>
+        <option value="2" <?= isset($_GET['categoria']) && $_GET['categoria'] == 2 ? 'selected' : '' ?>>Categoria 2</option>
+        <!-- Adicione outras categorias conforme necessário -->
       </select>
-      
-      <button type="submit">Buscar</button>
+
+      <!-- Filtro por data inicial -->
+      <label for="de">From:</label>
+      <input type="date" name="de" value="<?= ($_GET['de'] ?? '') ?>">
+
+      <!-- Filtro por data final -->
+      <label for="ate">To:</label>
+      <input type="date" name="ate" value="<?= ($_GET['ate'] ?? '') ?>">
+
+      <!-- Ordem de exibição -->
+      <select name="ordem">
+        <option value="DESC" <?= (($_GET['ordem'] ?? '') === 'DESC') ? 'selected' : '' ?>>Recent First</option>
+        <option value="ASC" <?= (($_GET['ordem'] ?? '') === 'ASC') ? 'selected' : '' ?>>Oldest First</option>
+      </select>
+
+      <button type="submit">Search</button>
     </form>
+
   </div>
   <hr>
 </header
+

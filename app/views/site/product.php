@@ -16,11 +16,11 @@
       <p>Sem imagem disponível.</p>
     <?php endif; ?>
 
-    <h2><?= htmlspecialchars($product->title) ?></h2>
-    <p><?= htmlspecialchars($product->sub_title) ?></p>
+    <h2><?= ($product->title) ?></h2>
+    <p><?= ($product->sub_title) ?></p>
   </div>
           
   <div>
-    <p><?= nl2br(htmlspecialchars($product->description)) ?></p>
+    <p><?= nl2br(($product->description)) ?></p>
   </div>
 </div>
