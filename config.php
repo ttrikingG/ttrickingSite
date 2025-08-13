@@ -2,9 +2,9 @@
 return[
     "db" => [
         'host' => 'localhost',
-        'dbname' => 'db_ecommerce',
-        'username' => 'root',
-        'password' => '7244',
+        'dbname' => 'seu banco',
+        'username' => 'seu usuário',
+        'password' => 'sua senha',
         'charset' => 'utf8',
     ],
 ];
