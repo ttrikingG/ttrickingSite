@@ -74,9 +74,8 @@ class HomeController extends ContainerController
             $post->images = $postImages[$post->id] ?? [];
         }
 
-        $this->view([], 'site.master');
         $this->view([], 'site.header');
-
+        
         $this->view([ 
             'title' => 'Home',
             'posts' => $posts,
@@ -85,8 +84,9 @@ class HomeController extends ContainerController
             'services' => $services,
             'portifolios' => $portifolios
         ], 'site.main');
-
+        
         $this->view([], 'site.footer');
+        $this->view([], 'site.master');
     }
 
 }

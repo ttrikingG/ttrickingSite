@@ -1,79 +1,67 @@
-<header>
-  <div style="background-color: Indigo;">
-    <a href="#" target="_blank"><img src=""></a>
-    <a href="#" target="_blank"><img src=""></a>
-  </div> <!--links para social mídia-->
-
-  
-  <div class="">
-    <b class="LogoPart1">T</b><b class="LogoPart2" href="">TrickinG</b><b class=""> Desenvolvimento Web</b><br>
-
-    <nav>
-      <div class="nav-links">
-        <b><a href="/">Home</a> |</b>
-        <b><a href="/about">Sobre</a> |</b>
-        <b><a href="/product">Produtos</a> |</b>
-        <b><a href="/service">Serviços</a> |</b>
-        <b><a href="/post">Postagens</a> |</b>
-        <b><a href="/contact">Contato</a></b>
-      </div>
-      
-    </nav>
-
-    <hr>
-
-    <div>
-      <b>Conecte-se já!!! </b>
-
-      <?php if (!logged()) : ?>
-        <a href="/login">Login</a>
-        <button><a href="/register">Cadastre-se</a></button>
-      <?php endif; ?>
-
-      <?php if (isset($_SESSION['user_logged'])) : ?>
-        <a href="/logout">Logout</a>
-      <?php endif; ?>
-
-      <?php if (isset($_SESSION['admin_logged'])) : ?>
-        <button><a style="color: crimson" href="/adminPanel">Admin Panel</a></button>
-      <?php endif; ?>
+<header class="header">
+    <!-- Social Media Section -->
+    <div class="social-links-header">
+        <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
 
-  </div> 
-  
+    <div class="header-container">
+        <!-- Header Top -->
+        <div class="header-top">
+            <div class="logo-section">
+                <b class="LogoPart1">T</b><b class="LogoPart2">TrickinG</b>
+                <span class="logo-subtitle">Desenvolvimento Web</span>
+            </div>
 
-  <hr>
-  
-  <div style="background-color: indigo; border-radius: 4px;">
-    <form method="GET" action="/search">
-      <input type="text" name="q" placeholder="Search..." value="<?= ($_GET['q'] ?? '') ?>">
+            <div class="auth-section">
+                <div class="connect-text">Conecte-se já!!!</div>
+                
+                <div>
+                    <?php if (!logged()) : ?>
+                        <a href="/login">Login</a>
+                        <button><a href="/register">Cadastre-se</a></button>
+                    <?php endif; ?>
 
-      <!-- Filtro por categoria -->
-      <select name="categoria">
-        <option value="">All Categories</option>
-        <option value="1" <?= isset($_GET['categoria']) && $_GET['categoria'] == 1 ? 'selected' : '' ?>>Categoria 1</option>
-        <option value="2" <?= isset($_GET['categoria']) && $_GET['categoria'] == 2 ? 'selected' : '' ?>>Categoria 2</option>
-        <!-- Adicione outras categorias conforme necessário -->
-      </select>
+                    <?php if (isset($_SESSION['user_logged'])) : ?>
+                        <a href="/logout">Logout</a>
+                    <?php endif; ?>
 
-      <!-- Filtro por data inicial -->
-      <label for="de">From:</label>
-      <input type="date" name="de" value="<?= ($_GET['de'] ?? '') ?>">
+                    <?php if (isset($_SESSION['admin_logged'])) : ?>
+                        <button><a style="color: crimson" href="/adminPanel">Admin Panel</a></button>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
 
-      <!-- Filtro por data final -->
-      <label for="ate">To:</label>
-      <input type="date" name="ate" value="<?= ($_GET['ate'] ?? '') ?>">
+        <!-- Navigation -->
+        <nav class="nav-container">
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="/"><i class="fas fa-home"></i> Home</a>
+                <a href="/about"><i class="fas fa-user"></i> Sobre</a>
+                <a href="/product"><i class="fas fa-box"></i> Produtos</a>
+                <a href="/service"><i class="fas fa-cog"></i> Serviços</a>
+                <a href="/post"><i class="fas fa-edit"></i> Postagens</a>
+                <a href="/contact"><i class="fas fa-envelope"></i> Contato</a>
+            </div>
+        </nav>
 
-      <!-- Ordem de exibição -->
-      <select name="ordem">
-        <option value="DESC" <?= (($_GET['ordem'] ?? '') === 'DESC') ? 'selected' : '' ?>>Recent First</option>
-        <option value="ASC" <?= (($_GET['ordem'] ?? '') === 'ASC') ? 'selected' : '' ?>>Oldest First</option>
-      </select>
-
-      <button type="submit">Search</button>
-    </form>
-
-  </div>
-  <hr>
-</header
-
+        <!-- Search Section -->
+        <div class="search-section">
+            <form class="search-form" method="GET" action="/search">
+                <input type="text" name="q" placeholder="🔍 Pesquisar..." value="<?= ($_GET['q'] ?? '') ?>">
+                
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>Buscar
+                </button>
+            </form>
+        </div>
+    </div>
+</header>

@@ -16,7 +16,7 @@ class SearchController extends ContainerController
         $results = [];
 
         if ($sql) {
-            $pdo = Bind::get('connection'); // mesma forma que você usa nos Models
+            $pdo = Bind::get('connection');
             $stmt = $pdo->query($sql);
             $results = $stmt->fetchAll(\PDO::FETCH_OBJ);
         }

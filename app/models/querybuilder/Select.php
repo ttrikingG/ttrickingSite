@@ -44,7 +44,8 @@ class Select
     {
         $titulo = $columns[0] ?? "''";
         $descricao = $columns[1] ?? "''";
-        return "{$titulo} AS titulo, {$descricao} AS descricao";
+        return "id, {$titulo} AS titulo, {$descricao} AS descricao";
+
     }
 
     private function formatWhere(array $columns): string

@@ -11,14 +11,14 @@ class LoginController extends ContainerController
     public function index()
     {
         
-        $this->view([], 'site.master');
         $this->view([], 'site.header');
         
         $this->view([
             'title' => 'Login',
         ], 'site.login');
-
+        
         $this->view([], 'site.footer');
+        $this->view([], 'site.master');
     }
 
     public function store()

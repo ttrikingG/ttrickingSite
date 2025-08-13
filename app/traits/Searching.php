@@ -11,7 +11,7 @@ class Searching
     {
         $term = $_GET['q'] ?? null;
         if (!$term) {
-            return ''; // ou lançar exceção, ou retornar valor padrão
+            return '';
         }
 
         $targets = [

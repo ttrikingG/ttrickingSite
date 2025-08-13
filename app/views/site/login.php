@@ -1,20 +1,28 @@
+<div class="form-wrapper">
+  <div class="form-container fade-in">
 
-<div>
-   <div style="background-color: Indigo; color: snow; text-align: center;">
-      <strong><h3>Faça seu login</h3></strong>
-   </div>
+    <!-- Cabeçalho -->
+    <div class="form-header">
+      <h3>Faça seu login</h3>
+    </div>
 
-   <form class="form-cadastro" action="/login/store" method="POST">
-     
-     <input type="text" placeholder="E-mail" name="email">
-     <div style="color: indigo; margin-bottom: 10px;"><small><?php echo message('email') ?></small></div>
+    <div class="form-body">
+      <form class="modern-form" action="/login/store" method="POST">
 
-     <input type="text" placeholder="Senha" name="password">
-     <div style="color: indigo; margin-bottom: 10px;"><small><?php echo message('password') ?></small></div>
-     
-     <button type="submit">Logar</button>
-     <div style="color: indigo; margin-bottom: 10px;"><small><?php echo message('login') ?></small></div>
+        <div class="input-group">
+          <input type="text" id="email" name="email" placeholder="E-mail" class="form-input">
+        </div>
+        <?php echo message('email') ?>
 
-     <hr>
-   </form>
+        <div class="input-group">
+          <input type="password" id="password" name="password" placeholder="Senha" class="form-input">
+        </div>
+        <?php echo message('password') ?>
+
+        <?php echo message('login') ?>
+
+        <button type="submit" class="submit-btn">Logar</button>
+      </form>
+    </div>
+  </div>
 </div>

@@ -1,26 +1,30 @@
-<div>
-  <div style="background-color: Indigo; color: snow; text-align: center;">
-    <strong><h3>Produto</h3></strong>
-  </div>
-      
-  <div>
-    <?php if (!empty($uploads)): ?>
-      <?php foreach ($uploads as $upload): ?>
-        <img 
-          style="width: 300px; height: 300px; border-radius: 8px; object-fit: cover;" 
-          src="<?= '.' . $upload->path; ?>" 
-          alt="Imagem do Produto"
-        >
-      <?php endforeach; ?>
-    <?php else: ?>
-      <p>Sem imagem disponível.</p>
-    <?php endif; ?>
+<div class="produto-wrapper">
+  <div class="produto-card-custom">
+    <div class="produto-header-custom">
+      <h2><?= ($product->title) ?></h2>
+    </div>
 
-    <h2><?= ($product->title) ?></h2>
-    <p><?= ($product->sub_title) ?></p>
-  </div>
-          
-  <div>
-    <p><?= nl2br(($product->description)) ?></p>
+    <div class="produto-content-custom">
+      <div class="produto-image-container-custom">
+        <?php if (!empty($uploads)): ?>
+          <?php foreach ($uploads as $upload): ?>
+            <img class="produto-image-custom" src="<?= '.' . $upload->path; ?>" alt="Imagem do Produto">
+          <?php endforeach; ?>
+        <?php else: ?>
+          <div class="produto-no-image-custom">
+            <p>Sem imagem disponível.</p>
+          </div>
+        <?php endif; ?>
+      </div>
+
+      <div class="produto-info-custom">
+        
+        <p class="produto-subtitle-custom"><?= ($product->sub_title) ?></p>
+      </div>
+
+      <div class="produto-description-custom">
+        <p><?= nl2br(($product->description)) ?></p>
+      </div>
+    </div>
   </div>
 </div>

@@ -44,27 +44,33 @@ trait Paginate
             $endLinks = $this->currentPage + $this->linksPerPage;
         }
 
-        $links = '<ul style="list-style-type: none; padding: 0; margin: 0;">';
+        $links = '<ul style="list-style-type: none; padding: 0; margin: 0; display: inline-flex;">';
         $active = $totalPages ? 'active' : '';
-        if($this->currentPage > 1){
+
+        $baseStyle = "color: #84cc16; text-decoration: none; padding: 8px 16px; margin: 0 4px; border-radius: 6px; transition: all 0.3s ease; font-weight: 500; border: 1px solid transparent;";
+        $hoverStyle = "onmouseover=\"this.style.background='rgba(132, 204, 22, 0.2)'\" onmouseout=\"this.style.background='transparent'\"";
+
+        if ($this->currentPage > 1) {
             $previusPage = $this->currentPage - 1;
-            $links .= "<li style='display: inline-block; margin-right: 5px;'> <a style='text-decoration: none; padding: 5px 10px; border: 1px solid #ccc; color: " . ($active ? "red" : "#333") . ";' href='?page=1' class='{$active}'> Init </a> </li>";
-            $links .= "<li style='display: inline-block; margin-right: 5px;'> <a style='text-decoration: none; padding: 5px 10px; border: 1px solid #ccc; color: " . ($active ? "red" : "#333") . ";' href='?page={$previusPage}' class='{$active}'> << </a> </li>";
+            $links .= "<li><a style='{$baseStyle}' {$hoverStyle} href='?page=1' class='{$active}'>Init</a></li>";
+            $links .= "<li><a style='{$baseStyle}' {$hoverStyle} href='?page={$previusPage}' class='{$active}'>&laquo;</a></li>";
         }
 
         for ($i = $startLinks; $i <= $endLinks; $i++) {
             $active = $this->currentPage == $i ? 'active' : '';
-            $links .= "<li style='display: inline-block; margin-right: 5px;'> <a style='text-decoration: none; padding: 5px 10px; border: 1px solid #ccc; color: " . ($active ? "red" : "#333") . ";' href='?page={$i}' class='{$active}'> {$i} </a> </li>";
+            $bgActive = $active ? "background: rgba(132, 204, 22, 0.2);" : "";
+            $links .= "<li><a style='{$baseStyle} {$bgActive}' {$hoverStyle} href='?page={$i}' class='{$active}'>{$i}</a></li>";
         }
 
-        if($this->currentPage < $totalPages){
+        if ($this->currentPage < $totalPages) {
             $nextPage = $this->currentPage + 1;
-            $links .= "<li style='display: inline-block; margin-right: 5px;'> <a style='text-decoration: none; padding: 5px 10px; border: 1px solid #ccc; color: " . ($active ? "red" : "#333") . ";' href='?page={$nextPage}' class='{$active}'> >> </a> </li>";
-            $links .= "<li style='display: inline-block; margin-right: 5px;'> <a style='text-decoration: none; padding: 5px 10px; border: 1px solid #ccc; color: " . ($active ? "red" : "#333") . ";' href='?page={$totalPages}' class='{$active}'> End </a> </li>";
-
+            $links .= "<li><a style='{$baseStyle}' {$hoverStyle} href='?page={$nextPage}' class='{$active}'>&raquo;</a></li>";
+            $links .= "<li><a style='{$baseStyle}' {$hoverStyle} href='?page={$totalPages}' class='{$active}'>End</a></li>";
         }
+
         $links .= '</ul>';
-        
-        return $links; // Adicionado para retornar a string gerada
+
+        return $links;
+
     }
 }

@@ -80,7 +80,7 @@ class PostController extends ContainerController
 
         $this->view([
             'title' => 'Post',
-            'posts' => $post,
+            'post' => $post,
             'comentarios' => $comentarios,
             'upload' => $uploads,
         ], 'site.post');
